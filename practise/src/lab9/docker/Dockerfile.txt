@@ -1,0 +1,8 @@
+FROM openjdk:17-jdk-slim
+
+ARG WORK_DIR
+WORKDIR /${WORK_DIR}
+
+COPY ${WORK_DIR}/*.jar /app/app.jar
+
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
